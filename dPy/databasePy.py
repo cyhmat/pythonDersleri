@@ -22,16 +22,23 @@ def createtable():
     print(stars)
 
 #==============================================================================================================
-# I'm calling register() function from my login module and im adding informations to my database.
+# I'm registering infos into the users table.
 #==============================================================================================================
 
 def registerinfo():
     con = sqlite3.connect("database.db")
     cursor = con.cursor()
-    username,password= login.register() # Sqlite highlighting and implementing not working on my IDE.
-    cursor.execute("INSERT INTO users (username,password) VALUES(?,?)", (username, password)) # Check it out later.
+    username = input("Username : ") # Sqlite highlighting and implementing not working on my IDE.
+    password = getpass.getpass("Şifreniz lütfen : ") # Check it out later.
+    cursor.execute("INSERT INTO users (username,password) VALUES(?,?)", (username, password))
     con.commit()
     con.close()
     print(stars)
     print("Registration completed.")
     print(stars)
+
+#==============================================================================================================
+# I'm checking inputs in here.
+#==============================================================================================================
+
+def checklogin():

@@ -5,7 +5,7 @@ from time import sleep
 stars = "=" * 90 # Just for menu.
 #==============================================================================================================
 # Here we are making our enterance for login or register.
-# After the enter() we are executing login.py or just exiting from program.
+# After the enter() we are executing databasePy.py
 #==============================================================================================================
 def enter():
     sEnter = """
